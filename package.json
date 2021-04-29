@@ -1,0 +1,16 @@
+{
+  "name": "guidebot",
+  "version": "1.0.0",
+  "description": "Discord bot mocking the most wise master Guide",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "author": "Dylan Radice",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0"
+  }
+}
