@@ -10,95 +10,96 @@ client.on('ready', () => {
 
 //// Setting a timer
 
-const ready = true
-
-setLockout => {
-  ready = false
-}
-
-setReady => {
-  ready = true
-}
-
-setTimer => {
-  setLockout();
-  setTimeout(setReady, 300000);
-}
-
 client.on('message', (message) => {
-  if (!message.author.bot && ready) {
+  const ready = true;
+
+  (setLockout) => {
+    ready = false;
+  };
+
+  (setReady) => {
+    ready = true;
+  };
+
+  (setTimer) => {
+    setLockout();
+    setTimeout(setReady, 300000);
+  };
+
+  if (!message.author.bot) {
     try {
       //// Live Respond ////
-
-      // 'Dave'
-      if (message.content.match(/\bDave\b/i)) {
-        message.channel.send('People always say I look like Dave Grohl', {
-          files: [
-            {
-              attachment: `${__dirname}/img/guide-dave-kilt.jpg`,
-              name: 'dave-grohl.jpg',
-            },
-          ],
-        });
-        setTimer();
-      }
-
-      // 'Archery', 'Arrow', 'Bow'
-      if (
-        message.content.match(/archery/i) ||
-        message.content.match(/arrow/i) ||
-        message.content.match(/\bbow\b/i)
-      ) {
-        message.channel.send(
-          'You guys talking about bows? I am a master bowsman, I hang them above my couch just in case I ever need to defend my domicile'
-        );
-        setTimer();
-      }
-
-      // 'Fawn'
-      if (
-        message.content.match(/\bfawn\b/i) ||
-        message.content.match(/\bdeer\b/i) ||
-        message.content.match(/\bhorny*\b/i)
-      ) {
-        message.channel.send('Feeling horny?', {
-          files: [
-            {
-              attachment: `${__dirname}/img/guide-horns.jpg`,
-              name: 'guide-fawn.jpg',
-            },
-          ],
-        });
-        setTimer();
-      }
-
-      // 'Tent'
-      if (message.content.match(/\btent\b/i)) {
-        message.channel.send(
-          'What if we made-out in my $700 historically accurate squire tent? 😏💦',
-          {
+      if (ready) {
+        // 'Dave'
+        if (message.content.match(/\bDave\b/i)) {
+          message.channel.send('People always say I look like Dave Grohl', {
             files: [
               {
-                attachment: `${__dirname}/img/guide-tent.jpg`,
-                name: 'guide-tent.jpg',
+                attachment: `${__dirname}/img/guide-dave-kilt.jpg`,
+                name: 'dave-grohl.jpg',
               },
             ],
-          }
-        );
-        setTimer();
-      }
+          });
+          setTimer();
+        }
 
-      // 'Master'
-      if (message.content.match(/\bmaster\b/i)) {
-        message.channel.send('Did someone call for the Most Wise Master?', {
-          files: [
+        // 'Archery', 'Arrow', 'Bow'
+        if (
+          message.content.match(/archery/i) ||
+          message.content.match(/arrow/i) ||
+          message.content.match(/\bbow\b/i)
+        ) {
+          message.channel.send(
+            'You guys talking about bows? I am a master bowsman, I hang them above my couch just in case I ever need to defend my domicile'
+          );
+          setTimer();
+        }
+
+        // 'Fawn'
+        if (
+          message.content.match(/\bfawn\b/i) ||
+          message.content.match(/\bdeer\b/i) ||
+          message.content.match(/\bhorny*\b/i)
+        ) {
+          message.channel.send('Feeling horny?', {
+            files: [
+              {
+                attachment: `${__dirname}/img/guide-horns.jpg`,
+                name: 'guide-fawn.jpg',
+              },
+            ],
+          });
+          setTimer();
+        }
+
+        // 'Tent'
+        if (message.content.match(/\btent\b/i)) {
+          message.channel.send(
+            'What if we made-out in my $700 historically accurate squire tent? 😏💦',
             {
-              attachment: `${__dirname}/img/guide-contemplative.jpg`,
-              name: 'guide-contemplative.jpg',
-            },
-          ],
-        });
-        setTimer();
+              files: [
+                {
+                  attachment: `${__dirname}/img/guide-tent.jpg`,
+                  name: 'guide-tent.jpg',
+                },
+              ],
+            }
+          );
+          setTimer();
+        }
+
+        // 'Master'
+        if (message.content.match(/\bmaster\b/i)) {
+          message.channel.send('Did someone call for the Most Wise Master?', {
+            files: [
+              {
+                attachment: `${__dirname}/img/guide-contemplative.jpg`,
+                name: 'guide-contemplative.jpg',
+              },
+            ],
+          });
+          setTimer();
+        }
       }
 
       //// Prompts ////
