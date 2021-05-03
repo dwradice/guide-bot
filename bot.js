@@ -54,7 +54,7 @@ client.on('message', (message) => {
         setTimer();
       }
 
-      // 'Fawn'
+      // 'Fawn', 'Deer', 'Horn/y'
       if (
         message.content.match(/\bfawn\b/i) ||
         message.content.match(/\bdeer\b/i) ||
@@ -88,11 +88,11 @@ client.on('message', (message) => {
       }
 
       // 'Master'
-      if (message.content.match(/\bmaster\b/i)) {
+      if (message.content.match(/\bwise\b\s\bmaster\b/i)) {
 
         const img = [`${__dirname}/img/guide-contemplative.jpg`,`${__dirname}/img/guide-tux.jpg`, `${__dirname}/img/guide-mask.jpg`]
 
-        message.channel.send('Did someone call for the Most Wise Master?', {
+        message.channel.send('Did someone call for THE Most Wise Master?', {
           files: [
             {
               attachment: img[Math.floor(Math.random() * img.length)],
