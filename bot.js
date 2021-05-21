@@ -43,16 +43,16 @@ client.on('message', (message) => {
       }
 
       // 'Archery', 'Arrow', 'Bow'
-      if (
-        message.content.match(/archery/i) ||
-        message.content.match(/arrow/i) ||
-        message.content.match(/\bbow\b/i)
-      ) {
-        message.channel.send(
-          "So embarrassed, just learned I've been doing a fundamental archery concept wrong this whole time! But, also I just wanted a reason to post and remind you guys I'm a cool archer boy"
-        );
-        setTimer();
-      }
+      // if (
+      //   message.content.match(/archery/i) ||
+      //   message.content.match(/arrow/i) ||
+      //   message.content.match(/\bbow\b/i)
+      // ) {
+      //   message.channel.send(
+      //     "So embarrassed, just learned I've been doing a fundamental archery concept wrong this whole time! But, also I just wanted a reason to post and remind you guys I'm a cool archer boy"
+      //   );
+      //   setTimer();
+      // }
 
       // 'Fawn', 'Deer', 'Horn/y'
       if (
@@ -113,7 +113,7 @@ client.on('message', (message) => {
       if (message.content.match(/\bguide\b\s\bteach\b/i)) {
         const msg = [
           // 'Casual reminder Please use my email address for official business, I do NOT use Messenger and may not get those messages.',
-          "Yikes When you find out you've been doing a critical archery fundamental backwards since day one",
+          // "Yikes When you find out you've been doing a critical archery fundamental backwards since day one",
           "Friendly reminder: Manchurian archery has one of the most harrowing histories of any martial art I've seen.",
           "Buckle up it's time for a thread: I can now publicly say that the national neurosurgery conference I've been working on and promoting for two years is cancelled.",
           'Normalize allowing yourself the utter flamboyance of a fishtail pommel. 🐟🐟',
@@ -144,7 +144,7 @@ client.on('message', (message) => {
           `Remember that time we got lost in the woods while practicing 
           medieval hunting techniques and we had to spend the night under the stars holding eachother for warmth? My sweater still smells like your musk, ${user}`,
           `I had trained for years in an ancient sword technique, I finally worked my way in to the national championship. I, of course, breeze through the competition and make my way to the final match. A masked figure was all that stood between me and victory. The bell rang and without a second of restraint my opponent carved their username in to my chest, I looked down and it read ${user}`,
-          `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
+          // `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
           `This night still haunts me. I was walking down the street when two terrifying men began staring at me from their stoop. They started yelling: "where you going, Rapunzel?", "Lovely locks for a lovely boy, would be a shame if somebody cut that pretty hair off your head!". I reached for my claymore, but like a fool I left it at home. That's when I saw ${user} break from the shadows and beat these hair rapists to death. My hero!`,
           `Fuck you, ${user}, don't ever message me again`,
           `${user} is the reason I decided to become a Most Wise Master, everything I do is to try and live up to your expectations!`,
