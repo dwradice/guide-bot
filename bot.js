@@ -30,17 +30,17 @@ client.on('message', (message) => {
     //// Live Respond ////
     if (ready && !message.author.bot) {
       // 'Dave'
-      if (message.content.match(/\bDave\b/i)) {
-        message.channel.send('People always say I look like Dave Grohl', {
-          files: [
-            {
-              attachment: `${__dirname}/img/guide-dave-kilt.jpg`,
-              name: 'dave-grohl.jpg',
-            },
-          ],
-        });
-        setTimer();
-      }
+      // if (message.content.match(/\bDave\b/i)) {
+      //   message.channel.send('People always say I look like Dave Grohl', {
+      //     files: [
+      //       {
+      //         attachment: `${__dirname}/img/guide-dave-kilt.jpg`,
+      //         name: 'dave-grohl.jpg',
+      //       },
+      //     ],
+      //   });
+      //   setTimer();
+      // }
 
       // 'Archery', 'Arrow', 'Bow'
       // if (
