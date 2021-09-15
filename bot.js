@@ -22,93 +22,111 @@ setReady = () => {
 
 setTimer = () => {
   setLockout();
-  setTimeout(setReady, 300000);
+  setTimeout(setReady, 86400000);
 };
 
-// client.on('message', (message) => {
-//   try {
-//     //// Live Respond ////
-//     if (ready && !message.author.bot) {
-      // 'Dave'
-      // if (message.content.match(/\bDave\b/i)) {
-      //   message.channel.send('People always say I look like Dave Grohl', {
-      //     files: [
-      //       {
-      //         attachment: `${__dirname}/img/guide-dave-kilt.jpg`,
-      //         name: 'dave-grohl.jpg',
-      //       },
-      //     ],
-      //   });
-      //   setTimer();
-      // }
+client.on('message', (message) => {
+  try {
 
-      // 'Archery', 'Arrow', 'Bow'
-      // if (
-      //   message.content.match(/archery/i) ||
-      //   message.content.match(/arrow/i) ||
-      //   message.content.match(/\bbow\b/i)
-      // ) {
-      //   message.channel.send(
-      //     "So embarrassed, just learned I've been doing a fundamental archery concept wrong this whole time! But, also I just wanted a reason to post and remind you guys I'm a cool archer boy"
-      //   );
-      //   setTimer();
-      // }
+    //// Reactions ////
 
-      // 'Fawn', 'Deer', 'Horn/y'
-      // if (
-      //   message.content.match(/\bfawn\b/i) ||
-      //   message.content.match(/\bdeer\b/i) ||
-      //   message.content.match(/\bhorny*\b/i)
-      // ) {
-      //   message.channel.send('Feeling horny?', {
-      //     files: [
-      //       {
-      //         attachment: `${__dirname}/img/guide-horns.jpg`,
-      //         name: 'guide-fawn.jpg',
-      //       },
-      //     ],
-      //   });
-      //   setTimer();
-      // }
+    if(message.content.match(/thayne/i)) {
+      const reactionEmoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Thayne');
+      message.react(reactionEmoji);
+    }
 
-      // // 'Tent'
-      // if (message.content.match(/\btent\b/i)) {
-      //   message.channel.send(
-      //     'What if we made-out in my $700 historically accurate squire tent? 😏💦',
-      //     {
-      //       files: [
-      //         {
-      //           attachment: `${__dirname}/img/guide-tent.jpg`,
-      //           name: 'guide-tent.jpg',
-      //         },
-      //       ],
-      //     }
-      //   );
-      //   setTimer();
-      // }
+    if(message.content.match(/\bsword\b/i)) {
+      message.react('⚔');
+    }
 
-      // // 'Master'
-      // if (message.content.match(/\bwise\b\s\bmaster\b/i)) {
+    if(message.content.match(/\bbow\b/i) || message.content.match(/\barrow\b/i)) {
+      message.react('🏹');
+    }
 
-      //   const img = [`${__dirname}/img/guide-contemplative.jpg`,`${__dirname}/img/guide-tux.jpg`, `${__dirname}/img/guide-mask.jpg`]
+    if(message.content.match(/\bforklift\b/i)) {
+      const reactionEmoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Forklift');
+      message.react(reactionEmoji);
+    }
 
-      //   message.channel.send('Did someone call for THE Most Wise Master?', {
-      //     files: [
-      //       {
-      //         attachment: img[Math.floor(Math.random() * img.length)],
-      //         name: 'guide.jpg',
-      //       },
-      //     ],
-      //   });
-      //   setTimer();
-      // }
-    // }
+    if(message.content.match(/\bkangen\b/i) || message.content.match(/\bmy\b\s\bblood\b\s\bmoving\b/i) ) {
+      const reactionEmoji = message.guild.emojis.cache.find(emoji => emoji.name === 'basic');
+      message.react(reactionEmoji);
+    }
+
+    if(
+      message.content.match(/\bslut\b/i) ||
+      message.content.match(/\bsexy\b/i) ||
+      message.content.match(/\bsex\b/i) ||
+      message.content.match(/\bsquirt\b/i) ||
+      message.content.match(/\bthick\b/i) ||
+      message.content.match(/\blick\b/i)
+      ) {
+        message.react('🥵')
+      }
+
+      
+    //// Live Respond ////
+    if (ready && !message.author.bot) {
+
+      // 'Maiden'
+      if (message.content.match(/\bmaiden\b/i)) {
+        message.channel.send('Oh to all the fair maidens that I have kissed before, I am so sorry');
+        setTimer();
+      }
+
+      // 'Leather'
+      if (message.content.match(/\bleather\b/i)) {
+        message.channel.send('Are any of the guys in the chat leatherworkers by chance? I need to boil some leather for an authentic 1400\'s codpiece I am making and need some help, no questions please 😉');
+        setTimer();
+      }
+
+      // 'Sword'
+      if (message.content.match(/\bpelican\b/i)) {
+        message.channel.send('ah, the mighty pelican, it is a symbol of sacrifice and responsibility, guided by these principles I truly never run a\'fowl\' 😏', {
+          files: [
+            {
+              attachment: `${__dirname}/img/guide_pelican.png`,
+              name: 'guide.png'
+            }
+          ]
+        });
+        setTimer();
+      }
+
+      // 'Doctor'
+      if (message.content.match(/\bdoctor\b/i)) {
+        message.channel.send('Doctors HATE this one simple trick! They\'ll be asking you, "What do you do for a living?!?!"', {
+          files: [
+            {
+              attachment: `${__dirname}/img/guide_doctor.png`,
+              name: 'guide.png',
+            }
+          ]
+        });
+        setTimer();
+      }
+
+      // 'Competition'
+      if (message.content.match(/\bcompetition\b/i)) {
+        message.channel.send('I know a thing or two about competition, I was honored to compete against the best of the best at the Mid-state Tri-annual Semi-Amateur Archery League this year! Here\'s a picture of our champion!', {
+          files: [
+            {
+              attachment: `${__dirname}/img/guide_compete.png`,
+              name: 'guide.png',
+            }
+          ]
+        });
+        setTimer();
+      }
+
+    }
 
     //// Prompts ////
     const firstWord = message.content.split(' ')[0];
     const user = `<@${message.author.id}>`;
 
     if (firstWord === '!guide' && !message.author.bot) {
+      
       // !guide teach
       if (message.content.match(/\bguide\b\s\bteach\b/i)) {
         const msg = [
@@ -141,8 +159,7 @@ setTimer = () => {
       if (message.content.match(/\bguide\b\s\bmemory\b/i)) {
         const msg = [
           // `Oh ${user}, I have so many fond memories of our time together, especially that time you promised you would never mock me behind my back, we are such good pals!`,
-          `Remember that time we got lost in the woods while practicing 
-          medieval hunting techniques and we had to spend the night under the stars holding eachother for warmth? My sweater still smells like your musk, ${user}`,
+          `Remember that time we got lost in the woods while practicing medieval hunting techniques and we had to spend the night under the stars holding eachother for warmth? My sweater still smells like your musk, ${user}`,
           `I had trained for years in an ancient sword technique, I finally worked my way in to the national championship. I, of course, breeze through the competition and make my way to the final match. A masked figure was all that stood between me and victory. The bell rang and without a second of restraint my opponent carved their username in to my chest, I looked down and it read ${user}`,
           // `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
           `This night still haunts me. I was walking down the street when two terrifying men began staring at me from their stoop. They started yelling: "where you going, Rapunzel?", "Lovely locks for a lovely boy, would be a shame if somebody cut that pretty hair off your head!". I reached for my claymore, but like a fool I left it at home. That's when I saw ${user} break from the shadows and beat these hair rapists to death. My hero!`,
@@ -162,3 +179,8 @@ setTimer = () => {
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
+
+
+
+
+// img[Math.floor(Math.random() * img.length)]
