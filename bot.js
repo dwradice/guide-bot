@@ -25,10 +25,10 @@ setTimer = () => {
   setTimeout(setReady, 300000);
 };
 
-client.on('message', (message) => {
-  try {
-    //// Live Respond ////
-    if (ready && !message.author.bot) {
+// client.on('message', (message) => {
+//   try {
+//     //// Live Respond ////
+//     if (ready && !message.author.bot) {
       // 'Dave'
       // if (message.content.match(/\bDave\b/i)) {
       //   message.channel.send('People always say I look like Dave Grohl', {
@@ -55,21 +55,21 @@ client.on('message', (message) => {
       // }
 
       // 'Fawn', 'Deer', 'Horn/y'
-      if (
-        message.content.match(/\bfawn\b/i) ||
-        message.content.match(/\bdeer\b/i) ||
-        message.content.match(/\bhorny*\b/i)
-      ) {
-        message.channel.send('Feeling horny?', {
-          files: [
-            {
-              attachment: `${__dirname}/img/guide-horns.jpg`,
-              name: 'guide-fawn.jpg',
-            },
-          ],
-        });
-        setTimer();
-      }
+      // if (
+      //   message.content.match(/\bfawn\b/i) ||
+      //   message.content.match(/\bdeer\b/i) ||
+      //   message.content.match(/\bhorny*\b/i)
+      // ) {
+      //   message.channel.send('Feeling horny?', {
+      //     files: [
+      //       {
+      //         attachment: `${__dirname}/img/guide-horns.jpg`,
+      //         name: 'guide-fawn.jpg',
+      //       },
+      //     ],
+      //   });
+      //   setTimer();
+      // }
 
       // // 'Tent'
       // if (message.content.match(/\btent\b/i)) {
@@ -102,7 +102,7 @@ client.on('message', (message) => {
       //   });
       //   setTimer();
       // }
-    }
+    // }
 
     //// Prompts ////
     const firstWord = message.content.split(' ')[0];
@@ -147,7 +147,7 @@ client.on('message', (message) => {
           // `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
           `This night still haunts me. I was walking down the street when two terrifying men began staring at me from their stoop. They started yelling: "where you going, Rapunzel?", "Lovely locks for a lovely boy, would be a shame if somebody cut that pretty hair off your head!". I reached for my claymore, but like a fool I left it at home. That's when I saw ${user} break from the shadows and beat these hair rapists to death. My hero!`,
           `Fuck you, ${user}, don't ever message me again`,
-          `${user} is the reason I decided to become a Most Wise Master, everything I do is to try and live up to your expectations!`,
+          // `${user} is the reason I decided to become a Most Wise Master, everything I do is to try and live up to your expectations!`,
           // `Oh my god, I just had a dream about you last night, ${user}! We were at a glowstick party back in college and we were wearing the sexiest fur coats you've ever seen, the night ended with us performing the dance number from Pulp Fiction 😂😂`,
           // `${user} is actually secretly my real life friend and just pretends to make fun of me with you guys to fit in. He is going to be the swordbearer in my wedding`,
           `I was dazzling all the women at the Ren Faire with my fishtail pommel when ${user} rolled in with the biggest, thickest sword I had ever seen. They turned to me and said "nice knife you got there, wan't to see what a REAL knight swings?" and cut my blade in twain`,
