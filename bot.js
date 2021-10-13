@@ -81,7 +81,7 @@ client.on('message', (message) => {
       }
 
       // 'Pelican
-      '
+      
       if (message.content.match(/\bpelican\b/i)) {
         message.channel.send('ah, the mighty pelican, it is a symbol of sacrifice and responsibility, guided by these principles I truly never run a\'fowl\' 😏', {
           files: [
