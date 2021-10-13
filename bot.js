@@ -80,7 +80,8 @@ client.on('message', (message) => {
         setTimer();
       }
 
-      // 'Sword'
+      // 'Pelican
+      '
       if (message.content.match(/\bpelican\b/i)) {
         message.channel.send('ah, the mighty pelican, it is a symbol of sacrifice and responsibility, guided by these principles I truly never run a\'fowl\' 😏', {
           files: [
@@ -94,17 +95,17 @@ client.on('message', (message) => {
       }
 
       // 'Doctor'
-      if (message.content.match(/\bdoctor\b/i)) {
-        message.channel.send('Doctors HATE this one simple trick! They\'ll be asking you, "What do you do for a living?!?!"', {
-          files: [
-            {
-              attachment: `${__dirname}/img/guide_doctor.png`,
-              name: 'guide.png',
-            }
-          ]
-        });
-        setTimer();
-      }
+      // if (message.content.match(/\bdoctor\b/i)) {
+      //   message.channel.send('Doctors HATE this one simple trick! They\'ll be asking you, "What do you do for a living?!?!"', {
+      //     files: [
+      //       {
+      //         attachment: `${__dirname}/img/guide_doctor.png`,
+      //         name: 'guide.png',
+      //       }
+      //     ]
+      //   });
+      //   setTimer();
+      // }
 
       // 'Competition'
       if (message.content.match(/\bcompetition\b/i)) {
