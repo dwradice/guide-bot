@@ -27,70 +27,86 @@ setTimer = () => {
 
 client.on('message', (message) => {
   try {
-
     //// Reactions ////
 
-    if(message.content.match(/thayne/i)) {
-      const reactionEmoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Thayne');
+    if (message.content.match(/thayne/i)) {
+      const reactionEmoji = message.guild.emojis.cache.find(
+        (emoji) => emoji.name === 'Thayne'
+      );
       message.react(reactionEmoji);
     }
 
-    if(message.content.match(/\bsword\b/i)) {
+    if (message.content.match(/\bsword\b/i)) {
       message.react('⚔');
     }
 
-    if(message.content.match(/\bbow\b/i) || message.content.match(/\barrow\b/i)) {
+    if (
+      message.content.match(/\bbow\b/i) ||
+      message.content.match(/\barrow\b/i)
+    ) {
       message.react('🏹');
     }
 
-    if(message.content.match(/\bforklift\b/i)) {
-      const reactionEmoji = message.guild.emojis.cache.find(emoji => emoji.name === 'Forklift');
+    if (message.content.match(/\bforklift\b/i)) {
+      const reactionEmoji = message.guild.emojis.cache.find(
+        (emoji) => emoji.name === 'Forklift'
+      );
       message.react(reactionEmoji);
     }
 
-    if(message.content.match(/\bkangen\b/i) || message.content.match(/\bmy\b\s\bblood\b\s\bmoving\b/i) ) {
-      const reactionEmoji = message.guild.emojis.cache.find(emoji => emoji.name === 'basic');
+    if (
+      message.content.match(/\bkangen\b/i) ||
+      message.content.match(/\bmy\b\s\bblood\b\s\bmoving\b/i)
+    ) {
+      const reactionEmoji = message.guild.emojis.cache.find(
+        (emoji) => emoji.name === 'basic'
+      );
       message.react(reactionEmoji);
     }
 
-    if(
+    if (
       message.content.match(/\bslut\b/i) ||
       message.content.match(/\bsexy\b/i) ||
       message.content.match(/\bsex\b/i) ||
       message.content.match(/\bsquirt\b/i) ||
       message.content.match(/\bthick\b/i) ||
       message.content.match(/\blick\b/i)
-      ) {
-        message.react('🥵')
-      }
+    ) {
+      message.react('🥵');
+    }
 
-      
     //// Live Respond ////
     if (ready && !message.author.bot) {
-
       // 'Maiden'
       if (message.content.match(/\bmaiden\b/i)) {
-        message.channel.send('Oh to all the fair maidens that I have kissed before, I am so sorry');
+        message.channel.send(
+          'Oh to all the fair maidens that I have kissed before, I am so sorry'
+        );
         setTimer();
       }
 
       // 'Leather'
       if (message.content.match(/\bleather\b/i)) {
-        message.channel.send('Are any of the guys in the chat leatherworkers by chance? I need to boil some leather for an authentic 1400\'s codpiece I am making and need some help, no questions please 😉');
+        message.channel.send(
+          "Are any of the guys in the chat leatherworkers by chance? I need to boil some leather for an authentic 1400's codpiece I am making and need some help, no questions please 😉"
+        );
         setTimer();
       }
 
       // 'Pelican
-      
+
       if (message.content.match(/\bpelican\b/i)) {
-        message.channel.send('ah, the mighty pelican, it is a symbol of sacrifice and responsibility, guided by these principles I truly never run a\'fowl\' 😏', {
-          files: [
-            {
-              attachment: `${__dirname}/img/guide_pelican.png`,
-              name: 'guide.png'
-            }
-          ]
-        });
+        message.channel.send(
+          "ah, the mighty pelican, it is a symbol of sacrifice and responsibility, guided by these principles I truly never run a'fowl' 😏",
+          {
+            files: [
+              {
+                attachment: `${__dirname}/img/guide_pelican.png`,
+                name: 'guide.png',
+              },
+            ],
+          }
+        );
         setTimer();
       }
 
@@ -109,17 +125,19 @@ client.on('message', (message) => {
 
       // 'Competition'
       if (message.content.match(/\bcompetition\b/i)) {
-        message.channel.send('I know a thing or two about competition, I was honored to compete against the best of the best at the Mid-state Tri-annual Semi-Amateur Archery League this year! Here\'s a picture of our champion!', {
-          files: [
-            {
-              attachment: `${__dirname}/img/guide_compete.png`,
-              name: 'guide.png',
-            }
-          ]
-        });
+        message.channel.send(
+          "I know a thing or two about competition, I was honored to compete against the best of the best at the Mid-state Tri-annual Semi-Amateur Archery League this year! Here's a picture of our champion!",
+          {
+            files: [
+              {
+                attachment: `${__dirname}/img/guide_compete.png`,
+                name: 'guide.png',
+              },
+            ],
+          }
+        );
         setTimer();
       }
-
     }
 
     //// Prompts ////
@@ -127,7 +145,6 @@ client.on('message', (message) => {
     const user = `<@${message.author.id}>`;
 
     if (firstWord === '!guide' && !message.author.bot) {
-      
       // !guide teach
       if (message.content.match(/\bguide\b\s\bteach\b/i)) {
         const msg = [
@@ -160,16 +177,16 @@ client.on('message', (message) => {
       if (message.content.match(/\bguide\b\s\bmemory\b/i)) {
         const msg = [
           // `Oh ${user}, I have so many fond memories of our time together, especially that time you promised you would never mock me behind my back, we are such good pals!`,
-          `Remember that time we got lost in the woods while practicing medieval hunting techniques and we had to spend the night under the stars holding eachother for warmth? My sweater still smells like your musk, ${user}`,
+          // `Remember that time we got lost in the woods while practicing medieval hunting techniques and we had to spend the night under the stars holding eachother for warmth? My sweater still smells like your musk, ${user}`,
           `I had trained for years in an ancient sword technique, I finally worked my way in to the national championship. I, of course, breeze through the competition and make my way to the final match. A masked figure was all that stood between me and victory. The bell rang and without a second of restraint my opponent carved their username in to my chest, I looked down and it read ${user}`,
           // `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
-          `This night still haunts me. I was walking down the street when two terrifying men began staring at me from their stoop. They started yelling: "where you going, Rapunzel?", "Lovely locks for a lovely boy, would be a shame if somebody cut that pretty hair off your head!". I reached for my claymore, but like a fool I left it at home. That's when I saw ${user} break from the shadows and beat these hair rapists to death. My hero!`,
+          // `This night still haunts me. I was walking down the street when two terrifying men began staring at me from their stoop. They started yelling: "where you going, Rapunzel?", "Lovely locks for a lovely boy, would be a shame if somebody cut that pretty hair off your head!". I reached for my claymore, but like a fool I left it at home. That's when I saw ${user} break from the shadows and beat these hair rapists to death. My hero!`,
           `Fuck you, ${user}, don't ever message me again`,
           // `${user} is the reason I decided to become a Most Wise Master, everything I do is to try and live up to your expectations!`,
           // `Oh my god, I just had a dream about you last night, ${user}! We were at a glowstick party back in college and we were wearing the sexiest fur coats you've ever seen, the night ended with us performing the dance number from Pulp Fiction 😂😂`,
           // `${user} is actually secretly my real life friend and just pretends to make fun of me with you guys to fit in. He is going to be the swordbearer in my wedding`,
           `I was dazzling all the women at the Ren Faire with my fishtail pommel when ${user} rolled in with the biggest, thickest sword I had ever seen. They turned to me and said "nice knife you got there, wan't to see what a REAL knight swings?" and cut my blade in twain`,
-          `${user} kept sending me messages through Facebook and I never saw them! 😡 PLEASE, I ONLY USE HOTMAIL!!`,
+          // `${user} kept sending me messages through Facebook and I never saw them! 😡 PLEASE, I ONLY USE HOTMAIL!!`,
         ];
         message.channel.send(msg[Math.floor(Math.random() * msg.length)]);
       }
@@ -180,8 +197,5 @@ client.on('message', (message) => {
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
-
-
-
 
 // img[Math.floor(Math.random() * img.length)]
