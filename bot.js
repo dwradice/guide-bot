@@ -31,21 +31,24 @@ client.on('message', (message) => {
 
     if (message.content.match(/thayne/i)) {
       const reactionEmoji = message.guild.emojis.cache.find(
-        (emoji) => emoji.name === 'Thayne'
+        (emoji) => emoji.name === 'thayne_head'
       );
       message.react(reactionEmoji);
     }
 
-    if (message.content.match(/\bsword\b/i)) {
-      message.react('⚔');
+    if (message.content.match(/\bmy wife\b/i)) {
+      const reactionEmoji = message.guild.emojis.cache.find(
+        (emoji) => emoji.name === 'borat'
+      );
+      message.react(reactionEmoji);
     }
 
-    if (
-      message.content.match(/\bbow\b/i) ||
-      message.content.match(/\barrow\b/i)
-    ) {
-      message.react('🏹');
-    }
+    // if (
+    //   message.content.match(/\bbow\b/i) ||
+    //   message.content.match(/\barrow\b/i)
+    // ) {
+    //   message.react('🏹');
+    // }
 
     if (message.content.match(/\bforklift\b/i)) {
       const reactionEmoji = message.guild.emojis.cache.find(
@@ -55,8 +58,7 @@ client.on('message', (message) => {
     }
 
     if (
-      message.content.match(/\bkangen\b/i) ||
-      message.content.match(/\bmy\b\s\bblood\b\s\bmoving\b/i)
+      message.content.match(/\bblood\b\s\bmoving\b/i)
     ) {
       const reactionEmoji = message.guild.emojis.cache.find(
         (emoji) => emoji.name === 'basic'
@@ -78,20 +80,22 @@ client.on('message', (message) => {
     //// Live Respond ////
     if (ready && !message.author.bot) {
       // 'Maiden'
-      if (message.content.match(/\bmaiden\b/i)) {
+      if (message.content.match(/\bkiss\b/i)) {
         message.channel.send(
           'Oh to all the fair maidens that I have kissed before, I am so sorry'
         );
         setTimer();
       }
 
-      // 'Leather'
-      if (message.content.match(/\bleather\b/i)) {
-        message.channel.send(
-          "Are any of the guys in the chat leatherworkers by chance? I need to boil some leather for an authentic 1400's codpiece I am making and need some help, no questions please 😉"
-        );
-        setTimer();
-      }
+      // // 'Leather'
+      // if (message.content.match(/\bleather\b/i)) {
+
+        
+      //   message.channel.send(
+      //     "Are any of the guys in the chat leatherworkers by chance? I need to boil some leather for an authentic 1400's codpiece I am making and need some help, no questions please 😉"
+      //   );
+      //   setTimer();
+      // }
 
       // 'Pelican
 
@@ -123,21 +127,21 @@ client.on('message', (message) => {
       //   setTimer();
       // }
 
-      // 'Competition'
-      if (message.content.match(/\bcompetition\b/i)) {
-        message.channel.send(
-          "I know a thing or two about competition, I was honored to compete against the best of the best at the Mid-state Tri-annual Semi-Amateur Archery League this year! Here's a picture of our champion!",
-          {
-            files: [
-              {
-                attachment: `${__dirname}/img/guide_compete.png`,
-                name: 'guide.png',
-              },
-            ],
-          }
-        );
-        setTimer();
-      }
+      // // 'Competition'
+      // if (message.content.match(/\bcompetition\b/i)) {
+      //   message.channel.send(
+      //     "I know a thing or two about competition, I was honored to compete against the best of the best at the Mid-state Tri-annual Semi-Amateur Archery League this year! Here's a picture of our champion!",
+      //     {
+      //       files: [
+      //         {
+      //           attachment: `${__dirname}/img/guide_compete.png`,
+      //           name: 'guide.png',
+      //         },
+      //       ],
+      //     }
+      //   );
+      //   setTimer();
+      // }
     }
 
     //// Prompts ////
