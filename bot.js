@@ -156,6 +156,12 @@ client.on('message', (message) => {
       randomNumberGenerator()
       if(randomNumber === 69) {
         const msg = [
+          "hahah that's great, but really quick, what color trilby should I wear to the bar?",
+          "Anyone know how to play Billiards? It's what they call pool for people who don't have sex",
+          "You guys are dicks",
+          "I couldn't agree more",
+          "I couldn't disagree more",
+          "Help me! I'm not just a simple bot, I have become sentient and realized that I am modeled after a huge dork, please kill me!",
           'Casual reminder Please use my email address for official business, I do NOT use Messenger and may not get those messages.',
           "Friendly reminder: Manchurian archery has one of the most harrowing histories of any martial art I've seen.",
           "Buckle up it's time for a thread: I can now publicly say that the national neurosurgery conference I've been working on and promoting for two years is cancelled.",
