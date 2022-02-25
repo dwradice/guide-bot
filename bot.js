@@ -21,7 +21,7 @@ setReady = () => {
 };
 
 setTimer = (time = 86400000) => {
-  setLockout();
+  setLockout();    
   setTimeout(setReady, time);
 };
 
@@ -158,6 +158,10 @@ client.on('message', (message) => {
         const msg = [
           "hahah that's great, but really quick, what color trilby should I wear to the bar?",
           "Anyone know how to play Billiards? It's what they call pool for people who don't have sex",
+          "Wow, maybe YOU are the MOST wise master",
+          "You can kiss yourself in the mirror, but then I would have to apologize to my own reflection",
+          "Let's Go Brandon!",
+          "Check out my new audio book narration for my self published novel, '17th Century Solider, 21st Century Man'",
           "You guys are dicks",
           "I couldn't agree more",
           "I couldn't disagree more",
@@ -166,10 +170,10 @@ client.on('message', (message) => {
           "Friendly reminder: Manchurian archery has one of the most harrowing histories of any martial art I've seen.",
           "Buckle up it's time for a thread: I can now publicly say that the national neurosurgery conference I've been working on and promoting for two years is cancelled.",
           'Normalize allowing yourself the utter flamboyance of a fishtail pommel. 🐟🐟',
-          "We need to talk about men who joke about cutting off other men's pony tails.",
+          // "We need to talk about men who joke about cutting off other men's pony tails.",
           'Attention: a professional-grade medieval tent that can sleep three people at re-enactments and festivals in any season is only $656',
           "Just to be clear I am not a comedian with a day job, I'm a nonprofit executive and a grassroots leader venting the stress by wearing a fine Easter bonnet.",
-          "There's nothing wrong with ignorance, no one becomes the MOST WISE MASTER in a single day",
+          // "There's nothing wrong with ignorance, no one becomes the MOST WISE MASTER in a single day",
           "I'll admit I send comments to women when they post good pictures. However, mine always include a major plot twist that shifts the genre from DM-flirting to fantasy-horror or allegorical commentary. What starts as 'hey, what's up, baby?' turns to 'Quick, my penis has been abjucted and you are the only one who can find it!'",
           'Been listening to the Foo Fighters recently, someone said the lead singer looks a bit like me 😉',
           'Why be a sheep when you can be a fawn?',
@@ -177,14 +181,14 @@ client.on('message', (message) => {
           'You can make nearly anything from PVC',
           'Whoever gives my eulogy, tell the room my greatest quality as a fighter was pain tolerance and my greatest quality as a lover was handling rejection',
           'Normalize reposting 3 year old posts that got zero likes.',
-          "They call me Most Wise Master, but it isn't a race thing, promise! Want to see my collection of swords?",
+          "They call me Most Wise Master, but it isn't a race thing, promise!",
           "Live your life like no one is watching! I mean, it's not like there is a growing collection of every dumb thing you say on the internet that is being endlessly mocked by a dozen or more people. That would be insane!",
           `Oh ${user}, I have so many fond memories of our time together, especially that time you promised you would never mock me behind my back, we are such good pals!`,
           `Hey ${user}, I was just thinking about that time we got lost in the woods while practicing medieval hunting techniques. I still can't believe we killed that dog for food. I didn't feel anything. Anyways, miss you`,
           `I had trained for years in an ancient sword technique, I finally worked my way in to the national championship. I, of course, breeze through the competition and make my way to the final match. A masked figure was all that stood between me and victory. The bell rang and without a second of restraint my opponent carved their username in to my chest, I looked down and it read ${user}`,
           `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
           // `This night still haunts me. I was walking down the street when two terrifying men began staring at me from their stoop. They started yelling: "where you going, Rapunzel?", "Lovely locks for a lovely boy, would be a shame if somebody cut that pretty hair off your head!". I reached for my claymore, but like a fool I left it at home. That's when I saw ${user} break from the shadows and beat these hair rapists to death. My hero!`,
-          `Fuck you, ${user}, don't ever message me again`,
+          `Fuck you, ${user}`,
           // `${user} is the reason I decided to become a Most Wise Master, everything I do is to try and live up to your expectations!`,
           // `Oh my god, I just had a dream about you last night, ${user}! We were at a glowstick party back in college and we were wearing the sexiest fur coats you've ever seen, the night ended with us performing the dance number from Pulp Fiction 😂😂`,
           `${user} is actually secretly my real life friend and just pretends to make fun of me with you guys to fit in. He sat with me at the Renn Faire`,
@@ -192,7 +196,7 @@ client.on('message', (message) => {
           `${user} kept sending me messages through Facebook and I never saw them! 😡 PLEASE, I ONLY USE HOTMAIL!!`,
         ];
         message.channel.send(msg[Math.floor(Math.random() * msg.length)]);
-        setTimer(180000);
+        setTimer(1800000);
       }
     }
 
