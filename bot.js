@@ -48,12 +48,12 @@ client.on('message', (message) => {
       message.react(reactionEmoji);
     }
 
-    // if (
-    //   message.content.match(/\bbow\b/i) ||
-    //   message.content.match(/\barrow\b/i)
-    // ) {
-    //   message.react('🏹');
-    // }
+    if (
+      message.content.match(/\bbow\b/i) ||
+      message.content.match(/\barrow\b/i)
+    ) {
+      message.react('🏹');
+    }
 
     if (message.content.match(/\bforklift\b/i)) {
       const reactionEmoji = message.guild.emojis.cache.find(
@@ -63,7 +63,7 @@ client.on('message', (message) => {
     }
 
     if (
-      message.content.match(/\bblood\b\s\bmoving\b/i)
+      message.content.match(/\bmy\b\s\bblood\b/i)
     ) {
       const reactionEmoji = message.guild.emojis.cache.find(
         (emoji) => emoji.name === 'basic'
