@@ -151,7 +151,7 @@ client.on('message', (message) => {
     if (ready && !message.author.bot) {
       let randomNumber
       randomNumberGenerator = () => {
-        randomNumber = Math.floor(Math.random() * 100);
+        randomNumber = Math.floor(Math.random() * 200);
       }
       randomNumberGenerator()
       if(randomNumber === 69) {
@@ -163,7 +163,7 @@ client.on('message', (message) => {
           "Let's Go Brandon!",
           "Check out my new audio book narration for my self published novel, '17th Century Solider, 21st Century Man'",
           "You guys are dicks",
-          "I couldn't agree more",
+          "I hate to admit it, but you're right",
           "I couldn't disagree more",
           "Help me! I'm not just a simple bot, I have become sentient and realized that I am modeled after a huge dork, please kill me!",
           'Casual reminder Please use my email address for official business, I do NOT use Messenger and may not get those messages.',
@@ -182,11 +182,11 @@ client.on('message', (message) => {
           'Whoever gives my eulogy, tell the room my greatest quality as a fighter was pain tolerance and my greatest quality as a lover was handling rejection',
           'Normalize reposting 3 year old posts that got zero likes.',
           "They call me Most Wise Master, but it isn't a race thing, promise!",
-          "Live your life like no one is watching! I mean, it's not like there is a growing collection of every dumb thing you say on the internet that is being endlessly mocked by a dozen or more people. That would be insane!",
+          // "Live your life like no one is watching! I mean, it's not like there is a growing collection of every dumb thing you say on the internet that is being endlessly mocked by a dozen or more people. That would be insane!",
           `Oh ${user}, I have so many fond memories of our time together, especially that time you promised you would never mock me behind my back, we are such good pals!`,
           `Hey ${user}, I was just thinking about that time we got lost in the woods while practicing medieval hunting techniques. I still can't believe we killed that dog for food. I didn't feel anything. Anyways, miss you`,
           `I had trained for years in an ancient sword technique, I finally worked my way in to the national championship. I, of course, breeze through the competition and make my way to the final match. A masked figure was all that stood between me and victory. The bell rang and without a second of restraint my opponent carved their username in to my chest, I looked down and it read ${user}`,
-          `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
+          // `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
           // `This night still haunts me. I was walking down the street when two terrifying men began staring at me from their stoop. They started yelling: "where you going, Rapunzel?", "Lovely locks for a lovely boy, would be a shame if somebody cut that pretty hair off your head!". I reached for my claymore, but like a fool I left it at home. That's when I saw ${user} break from the shadows and beat these hair rapists to death. My hero!`,
           `Fuck you, ${user}`,
           // `${user} is the reason I decided to become a Most Wise Master, everything I do is to try and live up to your expectations!`,
@@ -196,7 +196,7 @@ client.on('message', (message) => {
           `${user} kept sending me messages through Facebook and I never saw them! 😡 PLEASE, I ONLY USE HOTMAIL!!`,
         ];
         message.channel.send(msg[Math.floor(Math.random() * msg.length)]);
-        setTimer(1800000);
+        setTimer(10800000);
       }
     }
 
