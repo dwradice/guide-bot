@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+require('discord-reply');
 const dotenv = require('dotenv');
 dotenv.config({ path: `${__dirname}/config.env` });
 
@@ -24,6 +25,8 @@ setTimer = (time = 86400000) => {
   setLockout();
   setTimeout(setReady, time);
 };
+
+///// LISTEN FOR MESSAGES //////
 
 client.on('message', (message) => {
   try {
@@ -90,55 +93,54 @@ client.on('message', (message) => {
           'Everyone is always raving about surgeons: "wow, their jobs must be so stessful!" HA! If only they knew the meaning of true stress.... of being the one that hits send'
         );
         setTimer();
-        }
-
-        // 'Pelican
-
-        if (message.content.match(/\bpelican\b/i)) {
-          message.channel.send(
-            "ah, the mighty pelican, it is a symbol of sacrifice and responsibility, guided by these principles I truly never run a'fowl' 😏",
-            {
-              files: [
-                {
-                  attachment: `${__dirname}/img/guide_pelican.png`,
-                  name: 'guide.png',
-                },
-              ],
-            }
-          );
-          setTimer();
-        }
-
-        // 'Doctor'
-        // if (message.content.match(/\bdoctor\b/i)) {
-        //   message.channel.send('Doctors HATE this one simple trick! They\'ll be asking you, "What do you do for a living?!?!"', {
-        //     files: [
-        //       {
-        //         attachment: `${__dirname}/img/guide_doctor.png`,
-        //         name: 'guide.png',
-        //       }
-        //     ]
-        //   });
-        //   setTimer();
-        // }
-
-        // // 'Competition'
-        // if (message.content.match(/\bcompetition\b/i)) {
-        //   message.channel.send(
-        //     "I know a thing or two about competition, I was honored to compete against the best of the best at the Mid-state Tri-annual Semi-Amateur Archery League this year! Here's a picture of our champion!",
-        //     {
-        //       files: [
-        //         {
-        //           attachment: `${__dirname}/img/guide_compete.png`,
-        //           name: 'guide.png',
-        //         },
-        //       ],
-        //     }
-        //   );
-        //   setTimer();
-        // }
       }
-    
+
+      // 'Pelican
+
+      if (message.content.match(/\bpelican\b/i)) {
+        message.channel.send(
+          "ah, the mighty pelican, it is a symbol of sacrifice and responsibility, guided by these principles I truly never run a'fowl' 😏",
+          {
+            files: [
+              {
+                attachment: `${__dirname}/img/guide_pelican.png`,
+                name: 'guide.png',
+              },
+            ],
+          }
+        );
+        setTimer();
+      }
+
+      // 'Doctor'
+      // if (message.content.match(/\bdoctor\b/i)) {
+      //   message.channel.send('Doctors HATE this one simple trick! They\'ll be asking you, "What do you do for a living?!?!"', {
+      //     files: [
+      //       {
+      //         attachment: `${__dirname}/img/guide_doctor.png`,
+      //         name: 'guide.png',
+      //       }
+      //     ]
+      //   });
+      //   setTimer();
+      // }
+
+      // // 'Competition'
+      // if (message.content.match(/\bcompetition\b/i)) {
+      //   message.channel.send(
+      //     "I know a thing or two about competition, I was honored to compete against the best of the best at the Mid-state Tri-annual Semi-Amateur Archery League this year! Here's a picture of our champion!",
+      //     {
+      //       files: [
+      //         {
+      //           attachment: `${__dirname}/img/guide_compete.png`,
+      //           name: 'guide.png',
+      //         },
+      //       ],
+      //     }
+      //   );
+      //   setTimer();
+      // }
+    }
 
     //// Random response ////
 
@@ -195,6 +197,24 @@ client.on('message', (message) => {
     }
   } catch (err) {
     console.log(err);
+  }
+});
+
+client.on('messageReactionAdd', async (reaction, user) => {
+  try {
+    if (reaction.count === 10) {
+      const msg = [
+        'All-star post',
+        'This is one for the record books',
+        'Pinning this for safe keeping',
+        "I'm the one that hit 'pin'",
+        "You got the whole squad laughing"
+      ];
+      reaction.message.pin();
+      reaction.message.lineReply(msg[Math.floor(Math.random() * msg.length)]);
+    }
+  } catch (error) {
+    console.log(error);
   }
 });
 
