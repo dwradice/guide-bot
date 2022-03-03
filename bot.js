@@ -181,7 +181,7 @@ client.on('message', (message) => {
           // "Live your life like no one is watching! I mean, it's not like there is a growing collection of every dumb thing you say on the internet that is being endlessly mocked by a dozen or more people. That would be insane!",
           `Oh ${user}, I have so many fond memories of our time together, especially that time you promised you would never mock me behind my back, we are such good pals!`,
           `Hey ${user}, I was just thinking about that time we got lost in the woods while practicing medieval hunting techniques. I still can't believe we killed that dog for food. I didn't feel anything. Anyways, miss you`,
-          `I had trained for years in an ancient sword technique, I finally worked my way in to the national championship. I, of course, breeze through the competition and make my way to the final match. A masked figure was all that stood between me and victory. The bell rang and without a second of restraint my opponent carved their username in to my chest, I looked down and it read ${user}`,
+          // `I had trained for years in an ancient sword technique, I finally worked my way in to the national championship. I, of course, breeze through the competition and make my way to the final match. A masked figure was all that stood between me and victory. The bell rang and without a second of restraint my opponent carved their username in to my chest, I looked down and it read ${user}`,
           // `My best friend to loiter in parking lots with! Love you ${user} 💘💘`,
           // `This night still haunts me. I was walking down the street when two terrifying men began staring at me from their stoop. They started yelling: "where you going, Rapunzel?", "Lovely locks for a lovely boy, would be a shame if somebody cut that pretty hair off your head!". I reached for my claymore, but like a fool I left it at home. That's when I saw ${user} break from the shadows and beat these hair rapists to death. My hero!`,
           `Fuck you, ${user}`,
@@ -202,7 +202,7 @@ client.on('message', (message) => {
 
 client.on('messageReactionAdd', async (reaction, user) => {
   try {
-    if (reaction.count === 10) {
+    if (reaction.count === 10 && !reaction.message.author.bot) {
       const msg = [
         'All-star post',
         'This is one for the record books',
