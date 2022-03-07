@@ -74,12 +74,17 @@ client.on('message', (message) => {
       message.react('💋');
     }
 
+    if (message.content.match(/\bgood\b\s\bbot\b/i)) {
+      message.react('🤖');
+    }
+
     if (
       message.content.match(/\bslut\b/i) ||
       message.content.match(/\bsexy\b/i) ||
       message.content.match(/\bsex\b/i) ||
       message.content.match(/\bsquirt\b/i) ||
       message.content.match(/\bthick\b/i) ||
+      message.content.match(/\bthicc\b/i) ||
       message.content.match(/\blick\b/i)
     ) {
       message.react('🥵');
