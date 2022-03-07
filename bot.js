@@ -9,7 +9,7 @@ client.on('ready', () => {
   console.log(`${client.user.tag} has logged on`);
 });
 
-//// Setting a timer
+//// Setting a timer ////
 // Timer functions //
 let ready = true;
 
@@ -90,7 +90,8 @@ client.on('message', (message) => {
       message.react('🥵');
     }
 
-    //// Live Respond ////
+    //// Trigger Word Response ////
+
     if (ready && !message.author.bot) {
       // // 'Surgeon'
       if (message.content.match(/\bsurgeon\b/i)) {
@@ -147,7 +148,7 @@ client.on('message', (message) => {
       // }
     }
 
-    //// Random response ////
+    //////// Randomized response /////////
 
     if (ready && !message.author.bot) {
       let randomNumber;
@@ -205,6 +206,8 @@ client.on('message', (message) => {
   }
 });
 
+/////// LISTEN FOR REACTIONS ////////
+
 client.on('messageReactionAdd', async (reaction, user) => {
   try {
     if (reaction.count === 10 && !reaction.message.author.bot) {
@@ -224,6 +227,10 @@ client.on('messageReactionAdd', async (reaction, user) => {
 });
 
 client.login(process.env.DISCORD_BOT_TOKEN);
+
+
+
+/////// GRAVEYARD CODE //////
 
 // img[Math.floor(Math.random() * img.length)]
 
